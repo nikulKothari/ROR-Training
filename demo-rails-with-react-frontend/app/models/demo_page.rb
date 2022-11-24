@@ -1,0 +1,2 @@
+class DemoPage < ApplicationRecord
+end
