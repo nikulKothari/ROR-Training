@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_time: 2022-12-23 12:19:12
+  end_time: 2022-12-23 12:19:12
+  channel: one
+
+two:
+  name: MyString
+  start_time: 2022-12-23 12:19:12
+  end_time: 2022-12-23 12:19:12
+  channel: two
