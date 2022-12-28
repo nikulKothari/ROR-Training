@@ -1,0 +1,3 @@
+ShowScheduleEmailJob:                      # job 
+   cron: "1 * * * * *"                                 # iteration of job  (every minute)
+   class: "ShowEmailJob"                     # job to be perform every minute
