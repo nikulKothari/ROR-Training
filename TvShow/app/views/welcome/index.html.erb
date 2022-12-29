@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <% if @tv_shows.any? %>
+        <% if @tv_shows %>
           <%= render @tv_shows %>
         <% else %>
           <tr>
@@ -32,6 +32,5 @@
     </table>
   </div>
   <div class="col-sm-12 text-right">
-    <%= will_paginate @tv_shows %>
   </div>
 </div>

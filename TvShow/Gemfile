@@ -76,6 +76,4 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'acts_as_favoritor'
-gem 'sidekiq'
-# this gem will be freee of deprecation warnings
-gem "sidekiq-cron", git: "https://github.com/citusdata/sidekiq-cron", branch: "hotfix/pipelining_depreciation"
+gem 'whenever', require: false

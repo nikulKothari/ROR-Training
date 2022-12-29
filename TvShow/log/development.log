@@ -114,3 +114,313 @@ Started GET "/" for 127.0.0.1 at 2022-12-28 12:32:48 +0530
 LoadError (cannot load such file -- sidekiq/cron/web):
   
 config/routes.rb:2:in `<main>'
+Whenever task
+Whenever task
+Started GET "/" for 127.0.0.1 at 2022-12-28 15:10:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered tv_shows/_search.html.erb (Duration: 11.7ms | Allocations: 5428)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 7018)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 7114)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 11608)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tv_shows_path' for #<ActionView::Base:0x0000000000d840>
+
+            @virtual_path = "tv_shows/_search";;@output_buffer.append=  form_tag(tv_shows_path, :method => "get", id: "search-form") do @output_buffer.safe_append='
+                                                                                 ^^^^^^^^^^^^^
+Did you mean?  tv_series_path):
+    1: <%= form_tag(tv_shows_path, :method => "get", id: "search-form") do %>
+    2:     <%= text_field_tag :search, params[:search], placeholder: "Search Shows" %>
+    3:     <%= submit_tag "Search" %>
+    4:   <% end %>
+  
+app/views/tv_shows/_search.html.erb:1
+app/views/welcome/index.html.erb:11
+Started GET "/" for 127.0.0.1 at 2022-12-28 15:10:31 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered tv_shows/_search.html.erb (Duration: 10.5ms | Allocations: 4881)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 5619)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5699)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 5968)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tv_shows_path' for #<ActionView::Base:0x0000000000db38>
+
+            @virtual_path = "tv_shows/_search";;@output_buffer.append=  form_tag(tv_shows_path, :method => "get", id: "search-form") do @output_buffer.safe_append='
+                                                                                 ^^^^^^^^^^^^^
+Did you mean?  tv_series_path):
+    1: <%= form_tag(tv_shows_path, :method => "get", id: "search-form") do %>
+    2:     <%= text_field_tag :search, params[:search], placeholder: "Search Shows" %>
+    3:     <%= submit_tag "Search" %>
+    4:   <% end %>
+  
+app/views/tv_shows/_search.html.erb:1
+app/views/welcome/index.html.erb:11
+Started GET "/" for 127.0.0.1 at 2022-12-29 09:44:55 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3373)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3462)
+Completed 500 Internal Server Error in 6ms (Allocations: 4249)
+
+
+  
+ActionView::Template::Error (Missing partial tv_series/_search with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/pcq112/ROR Training/ROR-Training/TvShow/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  tv_shows/search
+               tv_shows/tv_show
+               devise/shared/error_messages
+               action_text/attachables/missing_attachable
+               active_storage/blobs/blob
+               devise/shared/links):
+     8:     TV Shows
+     9:   </div>
+    10:   <div class="col-sm-6 mb-4 text-right">
+    11:     <%= render partial: 'tv_series/search' %>
+    12:   </div>
+    13:   <div class="col-sm-12">
+    14:     <table class="table table-striped table-bordered" id="tv-show-listing">
+  
+app/views/welcome/index.html.erb:11
+Started GET "/" for 127.0.0.1 at 2022-12-29 09:44:57 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2869)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2948)
+Completed 500 Internal Server Error in 4ms (Allocations: 3190)
+
+
+  
+ActionView::Template::Error (Missing partial tv_series/_search with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/pcq112/ROR Training/ROR-Training/TvShow/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  tv_shows/search
+               tv_shows/tv_show
+               devise/shared/error_messages
+               action_text/attachables/missing_attachable
+               active_storage/blobs/blob
+               devise/shared/links):
+     8:     TV Shows
+     9:   </div>
+    10:   <div class="col-sm-6 mb-4 text-right">
+    11:     <%= render partial: 'tv_series/search' %>
+    12:   </div>
+    13:   <div class="col-sm-12">
+    14:     <table class="table table-striped table-bordered" id="tv-show-listing">
+  
+app/views/welcome/index.html.erb:11
+Started GET "/" for 127.0.0.1 at 2022-12-29 09:44:59 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2870)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2949)
+Completed 500 Internal Server Error in 3ms (Allocations: 3172)
+
+
+  
+ActionView::Template::Error (Missing partial tv_series/_search with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/pcq112/ROR Training/ROR-Training/TvShow/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  tv_shows/search
+               tv_shows/tv_show
+               devise/shared/error_messages
+               action_text/attachables/missing_attachable
+               active_storage/blobs/blob
+               devise/shared/links):
+     8:     TV Shows
+     9:   </div>
+    10:   <div class="col-sm-6 mb-4 text-right">
+    11:     <%= render partial: 'tv_series/search' %>
+    12:   </div>
+    13:   <div class="col-sm-12">
+    14:     <table class="table table-striped table-bordered" id="tv-show-listing">
+  
+app/views/welcome/index.html.erb:11
+Started GET "/" for 127.0.0.1 at 2022-12-29 09:50:52 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered tv_shows/_search.html.erb (Duration: 5.6ms | Allocations: 539)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3460)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3546)
+Completed 500 Internal Server Error in 14ms (Allocations: 5083)
+
+
+  
+ActionView::Template::Error (undefined method `any?' for nil:NilClass
+
+'.freeze;         if @tv_shows.any? 
+                              ^^^^^):
+    21:         </tr>
+    22:       </thead>
+    23:       <tbody>
+    24:         <% if @tv_shows.any? %>
+    25:           <%= render @tv_shows %>
+    26:         <% else %>
+    27:           <tr>
+  
+app/views/welcome/index.html.erb:24
+Started GET "/" for 127.0.0.1 at 2022-12-29 09:51:24 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered tv_shows/_search.html.erb (Duration: 0.9ms | Allocations: 423)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3326)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3411)
+Completed 500 Internal Server Error in 6ms (Allocations: 4193)
+
+
+  
+ActionView::Template::Error (undefined method `any?' for nil:NilClass
+
+'.freeze;         if @tv_series.any? 
+                               ^^^^^):
+    21:         </tr>
+    22:       </thead>
+    23:       <tbody>
+    24:         <% if @tv_series.any? %>
+    25:           <%= render @tv_series %>
+    26:         <% else %>
+    27:           <tr>
+  
+app/views/welcome/index.html.erb:24
+Started GET "/" for 127.0.0.1 at 2022-12-29 09:51:41 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered tv_shows/_search.html.erb (Duration: 0.6ms | Allocations: 423)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2515)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2600)
+Completed 500 Internal Server Error in 4ms (Allocations: 3385)
+
+
+  
+ActionView::Template::Error (The @welcome variable appears to be empty. Did you forget to pass the collection object for will_paginate?):
+    32:     </table>
+    33:   </div>
+    34:   <div class="col-sm-12 text-right">
+    35:     <%= will_paginate @tv_shows %>
+    36:   </div>
+    37: </div>
+  
+app/views/welcome/index.html.erb:35
+Started GET "/" for 127.0.0.1 at 2022-12-29 09:52:05 +0530
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered tv_shows/_search.html.erb (Duration: 0.8ms | Allocations: 423)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 4442.9ms | Allocations: 124619)
+Completed 200 OK in 4446ms (Views: 4445.1ms | Allocations: 125466)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-12-29 09:52:33 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+Started GET "/tv_series" for 127.0.0.1 at 2022-12-29 09:52:42 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/tv_series"):
+  
+Started GET "/tv_series.new" for 127.0.0.1 at 2022-12-29 09:52:54 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/tv_series.new"):
+  
+Started GET "/tv_serie/new" for 127.0.0.1 at 2022-12-29 09:52:59 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/tv_serie/new"):
+  
+Started GET "/tv_series/new" for 127.0.0.1 at 2022-12-29 09:53:04 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/tv_series/new"):
+  
+Started GET "/tv_shows/new" for 127.0.0.1 at 2022-12-29 09:53:14 +0530
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for TvShowsController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
