@@ -1,0 +1,191 @@
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE DATABASE "twitter_development" ENCODING = 'unicode'[0m
+  [1m[35m (135.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (85.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-01-02 04:29:00.786526"], ["updated_at", "2023-01-02 04:29:00.786526"]]
+  [1m[36mTRANSACTION (17.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20230103043629)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_auth_token" ON "users" ("auth_token")[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6671199748738134225)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20230103043629)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (123.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "auth_token" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (32.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (31.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_auth_token" ON "users" ("auth_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230103043629"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for ::1 at 2023-01-03 11:16:49 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Users::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f97a0790150>, params: {"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users/registrations", "action"=>"create", "registration"=>{"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mUser Exists? (22.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user3@yopmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14:in `generate_auth_token!'
+  [1m[36mUser Create (26.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "user3@yopmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["auth_token", "[FILTERED]"], ["created_at", "2023-01-03 05:46:50.299837"], ["updated_at", "2023-01-03 05:46:50.299837"]]
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (27.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+Completed 201 Created in 448ms (Views: 0.5ms | ActiveRecord: 85.7ms | Allocations: 16743)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:18:35 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_with_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 654)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:20:14 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@yopmail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_with_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started POST "/users" for ::1 at 2023-01-03 11:21:51 +0530
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Users::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f97a0479c50>, params: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users/registrations", "action"=>"create", "registration"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user3@ymail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14:in `generate_auth_token!'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "user3@ymail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["auth_token", "[FILTERED]"], ["created_at", "2023-01-03 05:51:51.297255"], ["updated_at", "2023-01-03 05:51:51.297255"]]
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+Completed 201 Created in 277ms (Views: 0.4ms | ActiveRecord: 14.0ms | Allocations: 4153)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:23:25 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_with_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:24:02 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_with_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 318)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:24:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_with_token! rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2010)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:24:51 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_with_token! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 433)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:25:46 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user3@ymail.com"], ["LIMIT", 1]]
+Completed 201 Created in 448ms (Views: 1.0ms | ActiveRecord: 4.8ms | Allocations: 19651)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2023-01-03 11:27:26 +0530
+Processing by Devise::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:27:56 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user3@ymail.com"], ["LIMIT", 1]]
+Completed 201 Created in 266ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 3209)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:27:59 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user3@ymail.com"], ["LIMIT", 1]]
+Completed 201 Created in 271ms (Views: 0.4ms | ActiveRecord: 4.2ms | Allocations: 2969)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-01-03 11:28:02 +0530
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"user3@ymail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user3@ymail.com"], ["LIMIT", 1]]
+Completed 201 Created in 270ms (Views: 0.3ms | ActiveRecord: 8.3ms | Allocations: 2970)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelationships (20230103061027)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (111.9ms)[0m  [1m[35mCREATE TABLE "relationships" ("id" bigserial primary key, "follower_id" integer, "followed_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (32.8ms)[0m  [1m[35mCREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35m (40.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230103061027"]]
+  [1m[36mTRANSACTION (16.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTweets (20230103062139)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (75.3ms)[0m  [1m[35mCREATE TABLE "tweets" ("id" bigserial primary key, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_003928b7f5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE INDEX "index_tweets_on_user_id" ON "tweets" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230103062139"]]
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6671199748738134225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
